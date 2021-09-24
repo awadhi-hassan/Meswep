@@ -13,8 +13,10 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+        <link rel="stylesheet" href="{{ asset('style.css') }}">
+
         <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/app.js') }}" defer></script>        
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -28,9 +30,12 @@
             </header>
 
             <!-- Page Content -->
-            <main>
+            <main style="min-height: calc(100vh - 86px - 56px);">
                 {{ $slot }}
             </main>
+
+            <!-- Footer-->
+            @include('layouts.footer')
         </div>
     </body>
 </html>

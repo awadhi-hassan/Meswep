@@ -4,6 +4,11 @@
     </x-slot>
 
     <div class="container py-4">
-        This is the about page
+        @php
+            for ($i=0; $i < 10; $i++) {
+                print($i);
+            }
+        @endphp
+        
     </div>
 </x-app-layout>
