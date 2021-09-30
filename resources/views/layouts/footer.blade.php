@@ -11,13 +11,13 @@
     <div class="d-flex justify-center">
         <strong>© Copyright meswep.co.ke</strong>
         <div class="d-flex ml-20">
-            <img class="icons" src="{{ asset('whatsapp.svg') }}">
-            <img class="icons" src="{{ asset('facebook.svg') }}">
-            <img class="icons" src="{{ asset('twitter.svg') }}">
-            <img class="icons" src="{{ asset('instagram.svg') }}">
-            <img class="icons" src="{{ asset('telegram.svg') }}">
-            <img class="icons" src="{{ asset('envelope-open.svg') }}">
-            <img class="icons" src="{{ asset('youtube.svg') }}">
+            <img class="icons" src="{{ asset('storage/whatsapp.svg') }}">
+            <img class="icons" src="{{ asset('storage/facebook.svg') }}">
+            <img class="icons" src="{{ asset('storage/twitter.svg') }}">
+            <img class="icons" src="{{ asset('storage/instagram.svg') }}">
+            <img class="icons" src="{{ asset('storage/telegram.svg') }}">
+            <img class="icons" src="{{ asset('storage/envelope-open.svg') }}">
+            <img class="icons" src="{{ asset('storage/youtube.svg') }}">
         </div>
     </div>
 </footer>

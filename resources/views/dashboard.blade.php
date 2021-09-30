@@ -5,7 +5,11 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            Hello <strong>{{ Auth::user()->name }}</strong>, welcome to MESWEP's online platform.
+            @if ( Auth::user() )
+                Hello <strong>{{ Auth::user()->name }}</strong>, welcome to MESWEP's online platform.                
+            @else
+                Hello, welcome to MESWEP's online platform.                
+            @endif
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-2">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <h4 style="color: #0f893b"><strong>Muslim Education Secretariat-Western Province</strong></h4>
@@ -21,92 +25,21 @@
                             <div class="slideshow-container mt-3">
                             
                                 <!-- Full-width images with number and caption text -->
-                                <div class="slideshow justify-start">
-                                    <div class="numbertext">1 / 13</div>
-                                    <img src="{{ asset('media/kakamega1.jpg') }}" id="mosques">
-                                    <div class="text">Kakamega Jamia Mosque</div>
-                                </div>
-                            
-                                <div class="slideshow justify-start">
-                                    <div class="numbertext">2 / 13</div>
-                                    <img src="{{ asset('media/kakamega2.jpg') }}" id="mosques">
-                                    <div class="text">Kakamega Jamia Mosque</div>
-                                </div>
-                            
-                                <div class="slideshow justify-start">
-                                    <div class="numbertext">3 / 13</div>
-                                    <img src="{{ asset('media/kakamega3.jpg') }}" id="mosques">
-                                    <div class="text">Kakamega Jamia Mosque</div>
-                                </div>
-                                <div class="slideshow justify-start">
-                                    <div class="numbertext">4 / 13</div>
-                                    <img src="{{ asset('media/kakamega4.jpg') }}" id="mosques">
-                                    <div class="text">Kakamega Jamia Mosque</div>
-                                </div>
-                                <div class="slideshow justify-start">
-                                    <div class="numbertext">5 / 13</div>
-                                    <img src="{{ asset('media/kakamega5.jpg') }}" id="mosques">
-                                    <div class="text">Kakamega Jamia Mosque</div>
-                                </div>
-                                <div class="slideshow justify-start">
-                                    <div class="numbertext">6 / 13</div>
-                                    <img src="{{ asset('media/kakamega6.jpg') }}" id="mosques">
-                                    <div class="text">Kakamega Jamia Mosque</div>
-                                </div>
-                                <div class="slideshow justify-start">
-                                    <div class="numbertext">7 / 13</div>
-                                    <img src="{{ asset('media/kakamega7.jpg') }}" id="mosques">
-                                    <div class="text">Kakamega Jamia Mosque</div>
-                                </div>
-                                <div class="slideshow justify-start">
-                                    <div class="numbertext">8 / 13</div>
-                                    <img src="{{ asset('media/kakamega8.jpg') }}" id="mosques">
-                                    <div class="text">Kakamega Jamia Mosque</div>
-                                </div>
-                                <div class="slideshow justify-start">
-                                    <div class="numbertext">9 / 13</div>
-                                    <img src="{{ asset('media/kakamega9.jpg') }}" id="mosques">
-                                    <div class="text">Kakamega Jamia Mosque</div>
-                                </div>
-                                <div class="slideshow justify-start">
-                                    <div class="numbertext">10 / 13</div>
-                                    <img src="{{ asset('media/kakamega10.jpg') }}" id="mosques">
-                                    <div class="text">Kakamega Jamia Mosque</div>
-                                </div>
-                                <div class="slideshow justify-start">
-                                    <div class="numbertext">11 / 13</div>
-                                    <img src="{{ asset('media/kakamega11.jpg') }}" id="mosques">
-                                    <div class="text">Kakamega Jamia Mosque</div>
-                                </div>
-                                <div class="slideshow justify-start">
-                                    <div class="numbertext">12 / 13</div>
-                                    <img src="{{ asset('media/kakamega12.jpg') }}" id="mosques">
-                                    <div class="text">Kakamega Jamia Mosque</div>
-                                </div>
-                                <div class="slideshow justify-start">
-                                    <div class="numbertext">13 / 13</div>
-                                    <img src="{{ asset('media/kakamega13.jpg') }}" id="mosques">
-                                    <div class="text">Kakamega Jamia Mosque</div>
-                                </div>
-                            
+                                @for ($i = 1; $i <= 13; $i++)
+                                    <div class="slideshow justify-start">
+                                        <div class="numbertext">{{$i}} / 13</div>
+                                        <img src="{{ asset("storage/media/kakamega{$i}.jpg") }}" id="mosques">
+                                        <div class="text">Kakamega Jamia Mosque</div>
+                                    </div>                                    
+                                @endfor                           
                             </div>
                             <br>
                             
                             <!-- The dots/circles -->
                             <div style="text-align:center">
-                                <span class="dot" onclick="currentSlide(1)"></span>
-                                <span class="dot" onclick="currentSlide(2)"></span>
-                                <span class="dot" onclick="currentSlide(3)"></span>
-                                <span class="dot" onclick="currentSlide(4)"></span>
-                                <span class="dot" onclick="currentSlide(5)"></span>
-                                <span class="dot" onclick="currentSlide(6)"></span>
-                                <span class="dot" onclick="currentSlide(7)"></span>
-                                <span class="dot" onclick="currentSlide(8)"></span>
-                                <span class="dot" onclick="currentSlide(9)"></span>
-                                <span class="dot" onclick="currentSlide(10)"></span>
-                                <span class="dot" onclick="currentSlide(11)"></span>
-                                <span class="dot" onclick="currentSlide(12)"></span>
-                                <span class="dot" onclick="currentSlide(13)"></span>
+                                @for ($i = 0; $i <=13 ; $i++)
+                                    <span class="dot" onclick="currentSlide({$i})"></span>                                    
+                                @endfor
                             </div>                    
                         </div>
                         <div>
@@ -115,8 +48,8 @@
                                 MESWEP works in the counties of Kakamega, Bungoma Busia and Vihiga in the Western region of Kenya.
                             </div>
     
-                            <div class="mt-4" style="text-align: center">
-                                <h5 style="color: #0f893b"><strong>Who we work with.</strong></h5>
+                            <div class="mt-4">
+                                <h5 style="color: #0f893b; text-align:center;"><strong>Who we work with.</strong></h5>
                                 MESWEP works with all Muslim education institutions from pre-primary, Primary, Secondary and post-secondary education institutions including
                                  madrassas. MESWEP networks with all education actors and may affiliate with such likeminded bodies/organizations from within and without the
                                  area of operation including outside the country. MESWEP is affiliated to and works closely with Muslim Education Council (MEC) outlined
